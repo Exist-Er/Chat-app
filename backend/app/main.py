@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes import auth
+from app.routes import auth, chat
 
 app = FastAPI(title="Android Chat App API")
 
