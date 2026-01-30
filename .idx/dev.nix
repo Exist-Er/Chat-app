@@ -20,8 +20,8 @@
       enable = true;
       previews = {
         web = {
-          # Use bash -c to ensure the virtual environment is sourced correctly
-          command = ["bash" "-c" "source .venv/bin/activate && python3 -m uvicorn app.main:app --host 0.0.0.0 --port $PORT --reload"];
+          # Use the python interpreter from the virtual environment directly
+          command = ["./.venv/bin/python3" "-m" "uvicorn" "app.main:app" "--host" "0.0.0.0" "--port" "$PORT" "--reload"];
           manager = "web";
           cwd = "backend";
         };
