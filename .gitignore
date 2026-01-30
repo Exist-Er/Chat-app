@@ -1,0 +1,19 @@
+# Android
+.gradle/
+build/
+*.iml
+.idea/
+local.properties
+.DS_Store
+
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/test_db.py
+
+# Others
+.gemini/
+brain/
+*.log
