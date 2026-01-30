@@ -4,6 +4,8 @@
     pkgs.python311
     pkgs.openjdk17
     pkgs.python311Packages.pip
+    pkgs.python311Packages.fastapi
+    pkgs.python311Packages.uvicorn
   ];
   idx = {
     extensions = [
@@ -20,8 +22,8 @@
       enable = true;
       previews = {
         web = {
-          # Use the python interpreter from the virtual environment directly
-          command = ["./.venv/bin/python3" "-m" "uvicorn" "app.main:app" "--host" "0.0.0.0" "--port" "$PORT" "--reload"];
+          # Attempt to run with the venv python first, fallback to system python if it fails
+          command = ["bash" "-c" "if [ -f .venv/bin/python3 ]; then ./.venv/bin/python3 -m uvicorn app.main:app --host 0.0.0.0 --port $PORT --reload; else python3 -m uvicorn app.main:app --host 0.0.0.0 --port $PORT --reload; fi"];
           manager = "web";
           cwd = "backend";
         };
