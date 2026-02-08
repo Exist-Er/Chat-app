@@ -1,0 +1,297 @@
+==================================================
+🚀 Starting Chat App Backend
+==================================================
+Detected Local IP: 192.168.69.102
+Server will run on: http://192.168.69.102:8080
+==================================================
+Starting uvicorn...
+INFO:     Will watch for changes in these directories: ['/home/exister/Desktop/Personal-files/projects/Project_5/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     Started reloader process [200682] using WatchFiles
+INFO:     Started server process [200687]
+INFO:     Waiting for application startup.
+2026-02-08 19:12:28,813 - main - INFO - Starting Chat Application Backend...
+2026-02-08 19:12:58,917 - database - ERROR - Failed to connect to MongoDB: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 698892c456c5fb0c3afd9cdc, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+ERROR:    Traceback (most recent call last):
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/main.py", line 34, in lifespan
+    await Database.connect()
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/database.py", line 22, in connect
+    await cls.client.admin.command('ping')
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pymongo/_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pymongo/synchronous/database.py", line 934, in command
+    with self._client._conn_for_reads(read_preference, session, operation=command_name) as (
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pymongo/synchronous/mongo_client.py", line 1885, in _conn_for_reads
+    server = self._select_server(read_preference, session, operation)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pymongo/synchronous/mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+        server_selector,
+    ...<2 lines>...
+        operation_id=operation_id,
+    )
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pymongo/synchronous/topology.py", line 428, in select_server
+    server = self._select_server(
+        selector,
+    ...<4 lines>...
+        operation_id=operation_id,
+    )
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pymongo/synchronous/topology.py", line 402, in _select_server
+    servers = self.select_servers(
+        selector,
+    ...<4 lines>...
+        deprioritized_servers,
+    )
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pymongo/synchronous/topology.py", line 298, in select_servers
+    server_descriptions = self._select_servers_loop(
+        selector,
+    ...<4 lines>...
+        deprioritized_servers=deprioritized_servers,
+    )
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pymongo/synchronous/topology.py", line 359, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+        f"{self._error_message(selector)}, Timeout: {timeout}s, Topology Description: {self.description!r}"
+    )
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 698892c456c5fb0c3afd9cdc, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+
+ERROR:    Application startup failed. Exiting.
+WARNING:  WatchFiles detected changes in 'config.py'. Reloading...
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+    ~~~~~~~~~~~^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/main.py", line 9, in <module>
+    from config import settings
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/config.py", line 5, in <module>
+    class Settings(BaseSettings):
+    ...<30 lines>...
+            case_sensitive = False
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/config.py", line 27, in Settings
+    @field_validator("allowed_origins", mode="before")
+     ^^^^^^^^^^^^^^^
+NameError: name 'field_validator' is not defined
+WARNING:  WatchFiles detected changes in 'config.py'. Reloading...
+Process SpawnProcess-3:
+Traceback (most recent call last):
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/base.py", line 510, in __call__
+    field_value = self.prepare_field_value(field_name, field, field_value, value_is_complex)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/providers/env.py", line 123, in prepare_field_value
+    raise e
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/providers/env.py", line 120, in prepare_field_value
+    value = self.decode_complex_value(field_name, field, value)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/base.py", line 187, in decode_complex_value
+    return json.loads(value)
+           ~~~~~~~~~~^^^^^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+    ~~~~~~~~~~~^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/main.py", line 9, in <module>
+    from config import settings
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/config.py", line 40, in <module>
+    settings = Settings()
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/main.py", line 195, in __init__
+    **__pydantic_self__._settings_build_values(
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        values,
+        ^^^^^^^
+    ...<25 lines>...
+        _secrets_dir=_secrets_dir,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/main.py", line 438, in _settings_build_values
+    source_state = source()
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/providers/dotenv.py", line 106, in __call__
+    data: dict[str, Any] = super().__call__()
+                           ~~~~~~~~~~~~~~~~^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/base.py", line 512, in __call__
+    raise SettingsError(
+        f'error parsing value for field "{field_name}" from source "{self.__class__.__name__}"'
+    ) from e
+pydantic_settings.exceptions.SettingsError: error parsing value for field "allowed_origins" from source "DotEnvSettingsSource"
+WARNING:  WatchFiles detected changes in 'config.py'. Reloading...
+Process SpawnProcess-4:
+Traceback (most recent call last):
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/base.py", line 510, in __call__
+    field_value = self.prepare_field_value(field_name, field, field_value, value_is_complex)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/providers/env.py", line 123, in prepare_field_value
+    raise e
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/providers/env.py", line 120, in prepare_field_value
+    value = self.decode_complex_value(field_name, field, value)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/base.py", line 187, in decode_complex_value
+    return json.loads(value)
+           ~~~~~~~~~~^^^^^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+    ~~~~~~~~~~~^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/home/exister/.local/share/mise/installs/python/3.14.2/lib/python3.14/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/main.py", line 9, in <module>
+    from config import settings
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/config.py", line 40, in <module>
+    settings = Settings()
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/main.py", line 195, in __init__
+    **__pydantic_self__._settings_build_values(
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        values,
+        ^^^^^^^
+    ...<25 lines>...
+        _secrets_dir=_secrets_dir,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/main.py", line 438, in _settings_build_values
+    source_state = source()
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/providers/dotenv.py", line 106, in __call__
+    data: dict[str, Any] = super().__call__()
+                           ~~~~~~~~~~~~~~~~^^
+  File "/home/exister/Desktop/Personal-files/projects/Project_5/backend/.venv/lib/python3.14/site-packages/pydantic_settings/sources/base.py", line 512, in __call__
+    raise SettingsError(
+        f'error parsing value for field "{field_name}" from source "{self.__class__.__name__}"'
+    ) from e
+pydantic_settings.exceptions.SettingsError: error parsing value for field "allowed_origins" from source "DotEnvSettingsSource"
+WARNING:  WatchFiles detected changes in 'auth.py'. Reloading...
+INFO:     Started server process [231133]
+INFO:     Waiting for application startup.
+2026-02-08 20:35:11,607 - main - INFO - Starting Chat Application Backend...
+2026-02-08 20:35:15,730 - database - INFO - Connected to MongoDB: chatapp
+2026-02-08 20:35:17,552 - database - INFO - Database indexes created
+2026-02-08 20:35:17,553 - main - INFO - Server running on 0.0.0.0:8080
+INFO:     Application startup complete.

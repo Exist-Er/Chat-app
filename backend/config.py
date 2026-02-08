@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings
+from pydantic import field_validator
 from typing import List
 
 
@@ -23,6 +24,13 @@ class Settings(BaseSettings):
     
     # CORS
     allowed_origins: List[str] = ["http://localhost:3000", "http://localhost:8080"]
+
+    @field_validator("allowed_origins", mode="before")
+    @classmethod
+    def parse_allowed_origins(cls, v):
+        if isinstance(v, str) and not v.strip().startswith("["):
+            return [origin.strip() for origin in v.split(",")]
+        return v
     
     class Config:
         env_file = ".env"

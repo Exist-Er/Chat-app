@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.chatapp-mergeDebugResources-59:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/res/values-night/themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "325"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "290"
+                    }
+                }
+            ]
+        }
+    ]
+}
