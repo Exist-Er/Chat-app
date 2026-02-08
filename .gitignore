@@ -1,19 +1,15 @@
-# Android
-.gradle/
-build/
 *.iml
-.idea/
-local.properties
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
 .DS_Store
-
-# Python
-backend/.venv/
-backend/__pycache__/
-backend/*.pyc
-backend/.env
-backend/test_db.py
-
-# Others
-.gemini/
-brain/
-*.log
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
