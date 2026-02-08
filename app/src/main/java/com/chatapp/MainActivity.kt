@@ -9,6 +9,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import com.chatapp.ui.screens.ChatScreen
 import com.chatapp.ui.screens.LoginScreen
 import com.chatapp.ui.theme.MangaTheme
@@ -34,8 +36,12 @@ class MainActivity : ComponentActivity() {
                         onLogin = { id ->
                             val fullId = if (id.startsWith("dev_")) id else "dev_$id"
                             currentUserId = fullId
-                            // Connect WS immediately upon login
-                            app.webSocketClient.connect(fullId)
+                            
+                            // Register user (upload public key) then connect
+                            lifecycleScope.launch {
+                                app.repository.registerUser(fullId)
+                                app.webSocketClient.connect(fullId)
+                            }
                         }
                     )
                 } else if (recipientId == null) {

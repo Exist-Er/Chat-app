@@ -44,50 +44,42 @@ class CryptoManager(private val context: Context) {
             .keysetHandle
     }
     
-    // Get Public Key (to send to backend)
-    fun getPublicKeyBytes(): ByteArray {
+    // 3. Helper for Base64 Keys
+    fun getMyPublicKeyBase64(): String {
         val privateHandle = getOrGenerateIdentityKeysetHandle()
         val publicHandle = privateHandle.publicKeysetHandle
-        // Serialize to bytes (proto format)
-        // We will Base64 encode this before sending to backend
-        return publicHandle.keysetInfo.toString().toByteArray() // Placeholder serialization logic needed
         
-        // Correct way to export public key with Tink:
-        // usually we serialize the keyset.
-        // For simplicity, we just use cleartext keyset handle export for public keys (public keys are public!)
-        // privateHandle.publicKeysetHandle.write(JsonKeysetWriter.withFile(...))
-        // Here we return raw bytes or specialized output.
-        // Tink doesn't expose raw key bytes easily to discourage bad practice, but we need to send the Public Keyset to peers.
-    }
-    
-    // Decrypt incoming message (using private key)
-    fun decryptMessage(ciphertext: ByteArray, contextInfo: ByteArray?): ByteArray {
-        val handle = getOrGenerateIdentityKeysetHandle()
-        val decryptor = handle.getPrimitive(HybridDecrypt::class.java)
-        return decryptor.decrypt(ciphertext, contextInfo)
-    }
-    
-    // Encrypt outgoing message (using recipient's public key)
-    // Recipient public key must be imported from backend JSON/Bytes
-    fun encryptMessage(plaintext: ByteArray, recipientPublicKeysetHandle: KeysetHandle, contextInfo: ByteArray?): ByteArray {
-        val encryptor = recipientPublicKeysetHandle.getPrimitive(HybridEncrypt::class.java)
-        return encryptor.encrypt(plaintext, contextInfo)
+        val outputStream = java.io.ByteArrayOutputStream()
+        com.google.crypto.tink.CleartextKeysetHandle.write(
+            publicHandle,
+            com.google.crypto.tink.JsonKeysetWriter.withOutputStream(outputStream)
+        )
+        return Base64.encodeToString(outputStream.toByteArray(), Base64.NO_WRAP)
     }
 
-    // 2. Group Encryption (Symmetric - AES-GCM)
-    // We generate a fresh symmetric key for a group.
-    
-    fun generateGroupKey(): KeysetHandle {
-        return KeysetHandle.generateNew(com.google.crypto.tink.aead.AeadKeyTemplates.AES256_GCM)
+    fun parsePublicKey(base64PublicKey: String): KeysetHandle {
+        val keyBytes = Base64.decode(base64PublicKey, Base64.NO_WRAP)
+        val inputStream = java.io.ByteArrayInputStream(keyBytes)
+        return com.google.crypto.tink.CleartextKeysetHandle.read(
+            com.google.crypto.tink.JsonKeysetReader.withInputStream(inputStream)
+        )
     }
-    
-    fun encryptGroupMessage(plaintext: ByteArray, groupKeyHandle: KeysetHandle, associatedData: ByteArray?): ByteArray {
-        val aead = groupKeyHandle.getPrimitive(Aead::class.java)
-        return aead.encrypt(plaintext, associatedData)
+
+    // 4. Easy Encryption/Decryption Strings
+    fun encryptToB64(plaintext: String, recipientPublicHandle: KeysetHandle): String {
+        val encryptor = recipientPublicHandle.getPrimitive(HybridEncrypt::class.java)
+        val ciphertext = encryptor.encrypt(plaintext.toByteArray(Charsets.UTF_8), null) // Context info null for now
+        return Base64.encodeToString(ciphertext, Base64.NO_WRAP)
     }
-    
-    fun decryptGroupMessage(ciphertext: ByteArray, groupKeyHandle: KeysetHandle, associatedData: ByteArray?): ByteArray {
-        val aead = groupKeyHandle.getPrimitive(Aead::class.java)
-        return aead.decrypt(ciphertext, associatedData)
+
+    fun decryptFromB64(ciphertextB64: String): String {
+        val ciphertext = Base64.decode(ciphertextB64, Base64.NO_WRAP)
+        val handle = getOrGenerateIdentityKeysetHandle()
+        val decryptor = handle.getPrimitive(HybridDecrypt::class.java)
+        val plaintextBytes = decryptor.decrypt(ciphertext, null)
+        return String(plaintextBytes, Charsets.UTF_8)
     }
+
+    // Legacy/Internal methods if needed, but the above are the main API now.
+
 }

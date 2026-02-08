@@ -25,6 +25,25 @@ class ChatRepository(
     private val scope: CoroutineScope
 ) {
 
+    // 0. Register User (Send Public Key to Server)
+    suspend fun registerUser(userId: String) {
+        val publicKey = cryptoManager.getMyPublicKeyBase64()
+        try {
+            // Using ID as token in dev mode
+            val request = com.chatapp.network.UserRegistrationRequest(
+                google_id_token = userId, 
+                public_key = publicKey,
+                display_name = userId.removePrefix("dev_")
+            )
+            val response = api.register(request)
+            if (!response.isSuccessful) {
+                Log.e("ChatRepository", "Registration failed: ${response.code()}")
+            }
+        } catch (e: Exception) {
+            Log.e("ChatRepository", "Registration error", e)
+        }
+    }
+
     // 1. Get Messages (Observe Local DB)
     // The UI collects this Flow. When DB changes, UI updates automatically.
     fun getMessages(chatId: String): Flow<List<Message>> {
@@ -67,16 +86,15 @@ class ChatRepository(
                     messageDao.updateMessageStatus(messageId, MessageStatus.FAILED.name) // Using name for String converter
                     return@launch
                 }
-                val remotePublicKeyStr = keyResponse.body()?.public_key ?: return@launch
+                val remotePublicKeyStr = keyResponse.body()?.public_key ?: run {
+                    Log.e("ChatRepository", "No public key found for $recipientId")
+                    messageDao.updateMessageStatus(messageId, MessageStatus.FAILED.name)
+                    return@launch
+                }
 
                 // 2. Encrypt Content
-                // We need to parse the remote key string back to a handle/key
-                // For this example assuming CryptoManager handles string -> key conversion internal logic
-                // Real impl needs: cryptoManager.parsePublicKey(remotePublicKeyStr)
-                // val encryptedBytes = cryptoManager.encryptMessage(content.toByteArray(), remotePublicKey)
-                
-                // Placeholder encryption until we implement key parsing in CryptoManager
-                val encryptedPayload = "ENCRYPTED_${content}" // Mock encryption for flow
+                val recipientKeyHandle = cryptoManager.parsePublicKey(remotePublicKeyStr)
+                val encryptedPayload = cryptoManager.encryptToB64(content, recipientKeyHandle)
                 
                 // 3. Create Backend Event
                 val event = BackendEvent(
@@ -119,8 +137,13 @@ class ChatRepository(
         if (event.event_type == "MESSAGE") {
             try {
                 // 1. Decrypt
-                // val decryptedContent = cryptoManager.decryptMessage(event.encrypted_payload)
-                val decryptedContent = event.encrypted_payload.removePrefix("ENCRYPTED_") // Mock
+                 val decryptedContent = try {
+                     cryptoManager.decryptFromB64(event.encrypted_payload)
+                 } catch (e: Exception) {
+                     Log.e("ChatRepository", "Decryption failed", e)
+                     "<Decryption Error>"
+                 }
+
 
                 // 2. Save to DB
                 val message = Message(
