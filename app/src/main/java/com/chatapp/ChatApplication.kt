@@ -35,7 +35,14 @@ class ChatApplication : Application() {
     val webSocketClient by lazy { WebSocketClient(okHttpClient, appScope) }
     
     val repository by lazy {
-        ChatRepository(database.messageDao(), chatApi, cryptoManager, webSocketClient, appScope).apply {
+        ChatRepository(
+            messageDao = database.messageDao(),
+            groupKeyDao = database.groupKeyDao(),
+            api = chatApi,
+            cryptoManager = cryptoManager,
+            webSocketClient = webSocketClient,
+            scope = appScope
+        ).apply {
             // Ensure we start observing events as soon as the repository is initialized
             observeIncomingEvents()
         }

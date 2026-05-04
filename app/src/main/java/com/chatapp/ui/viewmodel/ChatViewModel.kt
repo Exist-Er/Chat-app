@@ -14,7 +14,8 @@ class ChatViewModel(
     private val repository: ChatRepository,
     private val chatId: String,
     private val recipientId: String,
-    private val senderId: String
+    private val senderId: String,
+    private val isGroup: Boolean = false
 ) : ViewModel() {
 
     // Messages Flow
@@ -32,7 +33,8 @@ class ChatViewModel(
                 chatId = chatId,
                 recipientId = recipientId,
                 content = content,
-                senderId = senderId
+                senderId = senderId,
+                isGroup = isGroup
             )
         }
     }
@@ -42,12 +44,13 @@ class ChatViewModel(
         private val repository: ChatRepository,
         private val chatId: String,
         private val recipientId: String,
-        private val senderId: String
+        private val senderId: String,
+        private val isGroup: Boolean = false
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(ChatViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return ChatViewModel(repository, chatId, recipientId, senderId) as T
+                return ChatViewModel(repository, chatId, recipientId, senderId, isGroup) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }

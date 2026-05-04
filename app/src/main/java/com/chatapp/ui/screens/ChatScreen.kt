@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -54,6 +55,7 @@ fun ChatScreen(
     messages: List<Message>,
     chatName: String = "Alice",
     currentUserId: String = "Me",
+    isGroup: Boolean = false,
     onBack: () -> Unit = {},
     onSend: (String) -> Unit = {}
 ) {
@@ -65,17 +67,27 @@ fun ChatScreen(
                 navigationIcon = {
                     androidx.compose.material3.IconButton(onClick = onBack) {
                         androidx.compose.material3.Icon(
-                            imageVector = Icons.Filled.ArrowBack, // Changed to filled (auto-mirrored not available in Bom 2023.08)
+                            imageVector = Icons.Filled.ArrowBack, 
                             contentDescription = "Back"
                         )
                     }
                 },
                 title = {
-                    Text(
-                        text = chatName.uppercase(),
-                        fontWeight = FontWeight.Black,
-                        fontSize = 20.sp
-                    )
+                    Column {
+                        Text(
+                            text = chatName.uppercase(),
+                            fontWeight = FontWeight.Black,
+                            fontSize = 20.sp
+                        )
+                        if (isGroup) {
+                            Text(
+                                text = "GROUP CHAT",
+                                fontWeight = FontWeight.Normal,
+                                fontSize = 10.sp,
+                                modifier = Modifier.wrapContentHeight(align = Alignment.CenterVertically)
+                            )
+                        }
+                    }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = White,
@@ -99,7 +111,7 @@ fun ChatScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues) // Ambiguity fix - pass paddingValues directly
+                .padding(paddingValues) 
                 .background(White)
         ) {
             LazyColumn(
@@ -109,11 +121,15 @@ fun ChatScreen(
                 reverseLayout = true
             ) {
                     items(messages.reversed()) { message ->
-                        MessageBubble(message = message, isMe = message.senderId == currentUserId)
+                        MessageBubble(
+                            message = message, 
+                            isMe = message.senderId == currentUserId,
+                            isGroup = isGroup
+                        )
                         Spacer(modifier = Modifier.padding(4.dp))
                     }
             }
-
+// ... rest of input area ...
             // Bubbly Input Area
             Row(
                 modifier = Modifier
@@ -171,14 +187,11 @@ fun ChatScreen(
 }
 
 @Composable
-fun MessageBubble(message: Message, isMe: Boolean) {
+fun MessageBubble(message: Message, isMe: Boolean, isGroup: Boolean = false) {
     val bubbleColor = if (isMe) Black else White
     val textColor = if (isMe) White else Black
     val alignment = if (isMe) Alignment.End else Alignment.Start
     
-    // Bubbly shapes: 
-    // If Me: TopLeft, TopRight, BottomLeft rounded. BottomRight sharp (or slightly less rounded).
-    // Let's go with "Speech Bubble" style.
     val bubbleShape = if (isMe) {
         RoundedCornerShape(18.dp, 18.dp, 2.dp, 18.dp)
     } else {
@@ -189,6 +202,16 @@ fun MessageBubble(message: Message, isMe: Boolean) {
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = alignment
     ) {
+        if (isGroup && !isMe) {
+            Text(
+                text = message.senderId.removePrefix("dev_"),
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                color = Black,
+                modifier = Modifier.padding(start = 12.dp, bottom = 2.dp)
+            )
+        }
+    
         Box(
             modifier = Modifier
                 .wrapContentWidth()

@@ -27,6 +27,10 @@ class MainActivity : ComponentActivity() {
             MangaTheme {
                 var currentUserId by remember { mutableStateOf<String?>(null) }
                 var recipientId by remember { mutableStateOf<String?>(null) }
+                var isGroupChat by remember { mutableStateOf(false) }
+                var isCreatingGroup by remember { mutableStateOf(false) }
+                
+                val myId = currentUserId ?: ""
 
                 if (currentUserId == null) {
                     LoginScreen(
@@ -44,35 +48,58 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     )
+                } else if (isCreatingGroup) {
+                    com.chatapp.ui.screens.CreateGroupScreen(
+                        onBack = { isCreatingGroup = false },
+                        onCreateGroup = { name, members ->
+                            lifecycleScope.launch {
+                                val groupId = app.repository.createGroup(name, members, myId)
+                                if (groupId != null) {
+                                    recipientId = groupId
+                                    isGroupChat = true
+                                    isCreatingGroup = false
+                                } else {
+                                    isCreatingGroup = false
+                                    // Handle failure? Toast?
+                                }
+                            }
+                        }
+                    )
                 } else if (recipientId == null) {
                     LoginScreen(
                         title = "WHO TO CHAT?",
-                        placeholder = "Enter recipient ID (e.g. bob)",
-                        buttonText = "START CHAT",
+                        placeholder = "Enter recipient or group ID",
+                        buttonText = "OPEN CHAT",
                         onLogin = { id ->
                             val fullId = if (id.startsWith("dev_")) id else "dev_$id"
                             recipientId = fullId
+                            // Simple heuristic for now: longer ID = group? Or just default false.
+                            // If it's a UUID, it's likely a group or message ID.
+                            // But for now, default false. User can create group to enter group mode.
+                            isGroupChat = false 
                         }
                     )
+                    // Temporary Group creation trigger:
+                    androidx.compose.foundation.layout.Box(
+                        modifier = androidx.compose.ui.Modifier.fillMaxSize(), 
+                        contentAlignment = androidx.compose.ui.Alignment.BottomCenter
+                    ) {
+                        androidx.compose.material3.TextButton(onClick = { isCreatingGroup = true }) {
+                            androidx.compose.material3.Text("OR CREATE A NEW GROUP", color = androidx.compose.ui.graphics.Color.Black, textDecoration = androidx.compose.ui.text.style.TextDecoration.Underline)
+                        }
+                    }
                 } else {
                     // Chat Interface
-                    // Use a key to recreate ViewModel if IDs change
-                    val chatId = recipientId!! // IN 1-to-1, chat ID is usually the other person or unique. 
-                    // For now, let's treat chatId as recipientId for simplicity or generating a unique one.
-                    // Actually, ChatID in 1-to-1 is usually a unique ID like "user1-user2" sorted.
-                    // But Repository expects chatId to filter messages.
-                    // Let's use the recipientId as chatId for this "Direct Message" view.
-                    
-                    val myId = currentUserId!!
                     val otherId = recipientId!!
                     
                     val viewModel: ChatViewModel = androidx.lifecycle.viewmodel.compose.viewModel(
                         key = "$myId-$otherId",
                         factory = ChatViewModel.Factory(
                             app.repository,
-                            otherId, // ChatID = RecipientID (Simple assumption for now)
+                            otherId, 
                             otherId,
-                            myId
+                            myId,
+                            isGroupChat 
                         )
                     )
                     
@@ -80,9 +107,13 @@ class MainActivity : ComponentActivity() {
                     
                     ChatScreen(
                         messages = messages,
-                        chatName = otherId.removePrefix("dev_").uppercase(),
+                        chatName = if (isGroupChat) "Group Chat" else otherId.removePrefix("dev_").uppercase(), // TODO: Get group name from DB if group
                         currentUserId = myId,
-                        onBack = { recipientId = null },
+                        isGroup = isGroupChat,
+                        onBack = { 
+                            recipientId = null 
+                            isGroupChat = false
+                        },
                         onSend = { content ->
                             viewModel.sendMessage(content)
                         }

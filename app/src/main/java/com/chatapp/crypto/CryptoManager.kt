@@ -80,6 +80,52 @@ class CryptoManager(private val context: Context) {
         return String(plaintextBytes, Charsets.UTF_8)
     }
 
-    // Legacy/Internal methods if needed, but the above are the main API now.
+    // 5. Group Key Management (Symmetric AEAD)
+    
+    fun generateGroupKey(): KeysetHandle {
+        return KeysetHandle.generateNew(com.google.crypto.tink.aead.AeadKeyTemplates.AES128_GCM)
+    }
 
+    // Encrypt a group keyset for a specific member using their public key
+    fun encryptGroupKeyForMember(groupKeyHandle: KeysetHandle, memberPublicHandle: KeysetHandle): String {
+        // 1. Serialize group key to bytes
+        val outputStream = java.io.ByteArrayOutputStream()
+        com.google.crypto.tink.CleartextKeysetHandle.write(
+            groupKeyHandle,
+            com.google.crypto.tink.JsonKeysetWriter.withOutputStream(outputStream)
+        )
+        val groupKeyBytes = outputStream.toByteArray()
+        val groupKeyJson = String(groupKeyBytes, Charsets.UTF_8)
+        
+        // 2. Encrypt the serialized key using the member's public key (Hybrid Encryption)
+        return encryptToB64(groupKeyJson, memberPublicHandle)
+    }
+
+    // Decrypt a received group keyset using my private identity key
+    fun importGroupKeyFromB64(encryptedGroupKeyB64: String): KeysetHandle {
+        // 1. Decrypt the blob using my private key
+        val groupKeyJson = decryptFromB64(encryptedGroupKeyB64)
+        
+        // 2. Parse the JSON back into a KeysetHandle
+        val inputStream = java.io.ByteArrayInputStream(groupKeyJson.toByteArray(Charsets.UTF_8))
+        return com.google.crypto.tink.CleartextKeysetHandle.read(
+            com.google.crypto.tink.JsonKeysetReader.withInputStream(inputStream)
+        )
+    }
+
+    // Symmetric Encryption for Group Messages
+    fun encryptWithGroupKey(plaintext: String, groupKeyHandle: KeysetHandle): String {
+        val aead = groupKeyHandle.getPrimitive(Aead::class.java)
+        val ciphertext = aead.encrypt(plaintext.toByteArray(Charsets.UTF_8), null)
+        return Base64.encodeToString(ciphertext, Base64.NO_WRAP)
+    }
+
+    fun decryptWithGroupKey(ciphertextB64: String, groupKeyHandle: KeysetHandle): String {
+        val ciphertext = Base64.decode(ciphertextB64, Base64.NO_WRAP)
+        val aead = groupKeyHandle.getPrimitive(Aead::class.java)
+        val plaintextBytes = aead.decrypt(ciphertext, null)
+        return String(plaintextBytes, Charsets.UTF_8)
+    }
+
+    // Legacy/Internal methods if needed, but the above are the main API now.
 }

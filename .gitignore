@@ -1,15 +1,50 @@
+# IDEs and Editors
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+.vscode/
+*.swp
+*.swo
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+Thumbs.db
+
+# Android / Gradle
+.gradle/
+**/build/
 local.properties
+captures/
+.externalNativeBuild
+.cxx/
+*.apk
+*.aar
+*.bundle
+*.keystore
+!debug.keystore
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*.so
+**/*.egg
+**/*.egg-info/
+.venv/
+env/
+venv/
+ENV/
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and Temporary files
+*.log
+build_errors.txt
+build_log.txt
+server_log.txt
+.kotlin/
+
+# Secrets and Local Config
+.env
+.env.*
+!*.example
+signing.properties
+google-services.json

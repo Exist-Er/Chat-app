@@ -28,20 +28,24 @@ import javax.annotation.processing.Generated;
 public final class AppDatabase_Impl extends AppDatabase {
   private volatile MessageDao _messageDao;
 
+  private volatile GroupKeyDao _groupKeyDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `messages` (`messageId` TEXT NOT NULL, `chatId` TEXT NOT NULL, `senderId` TEXT NOT NULL, `recipientId` TEXT NOT NULL, `content` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `status` TEXT NOT NULL, `type` TEXT NOT NULL, `sequenceNumber` INTEGER NOT NULL, PRIMARY KEY(`messageId`))");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `group_keys` (`groupId` TEXT NOT NULL, `keyVersion` INTEGER NOT NULL, `encryptedKeyB64` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`groupId`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8493c549bbaa702a16dd056a2f4d4025')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '80e464809e8166bd9f962d33df42ccce')");
       }
 
       @Override
       public void dropAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS `messages`");
+        db.execSQL("DROP TABLE IF EXISTS `group_keys`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -104,9 +108,23 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoMessages + "\n"
                   + " Found:\n" + _existingMessages);
         }
+        final HashMap<String, TableInfo.Column> _columnsGroupKeys = new HashMap<String, TableInfo.Column>(4);
+        _columnsGroupKeys.put("groupId", new TableInfo.Column("groupId", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGroupKeys.put("keyVersion", new TableInfo.Column("keyVersion", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGroupKeys.put("encryptedKeyB64", new TableInfo.Column("encryptedKeyB64", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGroupKeys.put("timestamp", new TableInfo.Column("timestamp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysGroupKeys = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesGroupKeys = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoGroupKeys = new TableInfo("group_keys", _columnsGroupKeys, _foreignKeysGroupKeys, _indicesGroupKeys);
+        final TableInfo _existingGroupKeys = TableInfo.read(db, "group_keys");
+        if (!_infoGroupKeys.equals(_existingGroupKeys)) {
+          return new RoomOpenHelper.ValidationResult(false, "group_keys(com.chatapp.data.model.GroupKey).\n"
+                  + " Expected:\n" + _infoGroupKeys + "\n"
+                  + " Found:\n" + _existingGroupKeys);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "8493c549bbaa702a16dd056a2f4d4025", "12e72359c0cddc2a0089782f7eb15e00");
+    }, "80e464809e8166bd9f962d33df42ccce", "0370ba2907d5a599caac8c32a2329c5c");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -117,7 +135,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "messages");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "messages","group_keys");
   }
 
   @Override
@@ -127,6 +145,7 @@ public final class AppDatabase_Impl extends AppDatabase {
     try {
       super.beginTransaction();
       _db.execSQL("DELETE FROM `messages`");
+      _db.execSQL("DELETE FROM `group_keys`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -142,6 +161,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
     final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
     _typeConvertersMap.put(MessageDao.class, MessageDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(GroupKeyDao.class, GroupKeyDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -170,6 +190,20 @@ public final class AppDatabase_Impl extends AppDatabase {
           _messageDao = new MessageDao_Impl(this);
         }
         return _messageDao;
+      }
+    }
+  }
+
+  @Override
+  public GroupKeyDao groupKeyDao() {
+    if (_groupKeyDao != null) {
+      return _groupKeyDao;
+    } else {
+      synchronized(this) {
+        if(_groupKeyDao == null) {
+          _groupKeyDao = new GroupKeyDao_Impl(this);
+        }
+        return _groupKeyDao;
       }
     }
   }

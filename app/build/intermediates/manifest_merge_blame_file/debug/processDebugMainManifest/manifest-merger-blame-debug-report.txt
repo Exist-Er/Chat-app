@@ -21,52 +21,52 @@
 15-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:9:22-62
 16
 17    <permission
-17-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/905148c0622d1e429da72e76b9cd6b8e/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+17-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/c27633951f14d82682638eb8eb510f37/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
 18        android:name="com.chatapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-18-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/905148c0622d1e429da72e76b9cd6b8e/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+18-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/c27633951f14d82682638eb8eb510f37/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
 19        android:protectionLevel="signature" />
-19-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/905148c0622d1e429da72e76b9cd6b8e/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+19-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/c27633951f14d82682638eb8eb510f37/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 20
 21    <uses-permission android:name="com.chatapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
-21-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/905148c0622d1e429da72e76b9cd6b8e/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-21-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/905148c0622d1e429da72e76b9cd6b8e/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+21-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/c27633951f14d82682638eb8eb510f37/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/c27633951f14d82682638eb8eb510f37/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 22    <uses-feature
-22-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:25:5-27:36
+22-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:25:5-27:36
 23        android:name="android.hardware.camera"
-23-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:26:9-47
+23-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:26:9-47
 24        android:required="false" />
-24-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:27:9-33
+24-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:27:9-33
 25    <uses-feature
-25-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:28:5-30:36
+25-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:28:5-30:36
 26        android:name="android.hardware.camera.front"
-26-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:29:9-53
+26-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:29:9-53
 27        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
-27-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:30:9-33
+27-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:30:9-33
 28    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
 29    <uses-feature
-29-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:33:5-35:36
+29-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:33:5-35:36
 30        android:name="android.hardware.camera.autofocus"
-30-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:34:9-57
+30-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:34:9-57
 31        android:required="false" />
-31-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:35:9-33
+31-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:35:9-33
 32    <uses-feature
-32-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:36:5-38:36
+32-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:36:5-38:36
 33        android:name="android.hardware.camera.flash"
-33-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:37:9-53
+33-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:37:9-53
 34        android:required="false" />
-34-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:38:9-33
+34-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:38:9-33
 35    <uses-feature
-35-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:39:5-41:36
+35-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:39:5-41:36
 36        android:name="android.hardware.screen.landscape"
-36-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:40:9-57
+36-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:40:9-57
 37        android:required="false" />
-37-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:41:9-33
+37-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:41:9-33
 38    <uses-feature
-38-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:42:5-44:36
+38-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:42:5-44:36
 39        android:name="android.hardware.wifi"
-39-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:43:9-45
+39-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:43:9-45
 40        android:required="false" />
-40-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:44:9-33
+40-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:44:9-33
 41
 42    <application
 42-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:11:5-34:19
@@ -75,7 +75,7 @@
 44        android:allowBackup="true"
 44-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:13:9-35
 45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-45-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/905148c0622d1e429da72e76b9cd6b8e/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+45-->[androidx.core:core:1.12.0] /home/exister/.gradle/caches/9.1.0/transforms/c27633951f14d82682638eb8eb510f37/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 46        android:dataExtractionRules="@xml/data_extraction_rules"
 46-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:14:9-65
 47        android:debuggable="true"
@@ -90,174 +90,173 @@
 52-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:18:9-54
 53        android:supportsRtl="true"
 53-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:19:9-35
-54        android:testOnly="true"
-55        android:theme="@style/Theme.ChatApp"
-55-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:20:9-45
-56        android:usesCleartextTraffic="true" >
-56-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:21:9-44
-57        <activity
-57-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:24:9-32:20
-58            android:name="com.chatapp.MainActivity"
-58-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:25:13-41
-59            android:exported="true"
-59-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:26:13-36
-60            android:theme="@style/Theme.ChatApp" >
-60-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:27:13-49
-61            <intent-filter>
-61-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:28:13-31:29
-62                <action android:name="android.intent.action.MAIN" />
-62-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:29:17-69
-62-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:29:25-66
-63
-64                <category android:name="android.intent.category.LAUNCHER" />
-64-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:30:17-77
-64-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:30:27-74
-65            </intent-filter>
-66        </activity>
-67        <activity
-67-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
-68            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-68-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
-69            android:excludeFromRecents="true"
-69-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
-70            android:exported="false"
-70-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
-71            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-71-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
-72        <!--
-73            Service handling Google Sign-In user revocation. For apps that do not integrate with
-74            Google Sign-In, this service will never be started.
-75        -->
-76        <service
-76-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
-77            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-77-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
-78            android:exported="true"
-78-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
-79            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-79-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
-80            android:visibleToInstantApps="true" />
-80-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/9159d7146873bb256a2efca79c75be47/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
-81
-82        <activity
-82-->[com.google.android.gms:play-services-base:18.0.1] /home/exister/.gradle/caches/9.1.0/transforms/d2154ec7f456779dcc7865e8ff84ed4b/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-83            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-83-->[com.google.android.gms:play-services-base:18.0.1] /home/exister/.gradle/caches/9.1.0/transforms/d2154ec7f456779dcc7865e8ff84ed4b/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-84            android:exported="false"
-84-->[com.google.android.gms:play-services-base:18.0.1] /home/exister/.gradle/caches/9.1.0/transforms/d2154ec7f456779dcc7865e8ff84ed4b/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-85            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-85-->[com.google.android.gms:play-services-base:18.0.1] /home/exister/.gradle/caches/9.1.0/transforms/d2154ec7f456779dcc7865e8ff84ed4b/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-86
-87        <meta-data
-87-->[com.google.android.gms:play-services-basement:18.2.0] /home/exister/.gradle/caches/9.1.0/transforms/99211c504982141f57257695597e5de7/transformed/play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-88            android:name="com.google.android.gms.version"
-88-->[com.google.android.gms:play-services-basement:18.2.0] /home/exister/.gradle/caches/9.1.0/transforms/99211c504982141f57257695597e5de7/transformed/play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-89            android:value="@integer/google_play_services_version" />
-89-->[com.google.android.gms:play-services-basement:18.2.0] /home/exister/.gradle/caches/9.1.0/transforms/99211c504982141f57257695597e5de7/transformed/play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
-90
-91        <activity
-91-->[androidx.compose.ui:ui-test-manifest:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/328a1f6402662cd7b4260a6ec81f9cb2/transformed/ui-test-manifest-1.5.1/AndroidManifest.xml:23:9-25:39
-92            android:name="androidx.activity.ComponentActivity"
-92-->[androidx.compose.ui:ui-test-manifest:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/328a1f6402662cd7b4260a6ec81f9cb2/transformed/ui-test-manifest-1.5.1/AndroidManifest.xml:24:13-63
-93            android:exported="true" />
-93-->[androidx.compose.ui:ui-test-manifest:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/328a1f6402662cd7b4260a6ec81f9cb2/transformed/ui-test-manifest-1.5.1/AndroidManifest.xml:25:13-36
-94
-95        <provider
-95-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/ae4fa306206a26b3759b82b6bd68aeeb/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
-96            android:name="androidx.startup.InitializationProvider"
-96-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/ae4fa306206a26b3759b82b6bd68aeeb/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
-97            android:authorities="com.chatapp.androidx-startup"
-97-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/ae4fa306206a26b3759b82b6bd68aeeb/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
-98            android:exported="false" >
-98-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/ae4fa306206a26b3759b82b6bd68aeeb/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
-99            <meta-data
-99-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/ae4fa306206a26b3759b82b6bd68aeeb/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
-100                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-100-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/ae4fa306206a26b3759b82b6bd68aeeb/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
-101                android:value="androidx.startup" />
-101-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/ae4fa306206a26b3759b82b6bd68aeeb/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
-102            <meta-data
-102-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/exister/.gradle/caches/9.1.0/transforms/df410b407ce0e3beb3e97a68d353c1b6/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-103                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-103-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/exister/.gradle/caches/9.1.0/transforms/df410b407ce0e3beb3e97a68d353c1b6/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-104                android:value="androidx.startup" />
-104-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/exister/.gradle/caches/9.1.0/transforms/df410b407ce0e3beb3e97a68d353c1b6/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
-105            <meta-data
-105-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-106                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-107                android:value="androidx.startup" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-108        </provider>
-109
-110        <activity
-110-->[androidx.compose.ui:ui-tooling-android:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/63c76521c4f82544d03f585a18a8e712/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
-111            android:name="androidx.compose.ui.tooling.PreviewActivity"
-111-->[androidx.compose.ui:ui-tooling-android:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/63c76521c4f82544d03f585a18a8e712/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
-112            android:exported="true" />
-112-->[androidx.compose.ui:ui-tooling-android:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/63c76521c4f82544d03f585a18a8e712/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
-113
-114        <service
-114-->[androidx.room:room-runtime:2.6.1] /home/exister/.gradle/caches/9.1.0/transforms/4726209b60b5b9be6400b9afbd1cb59d/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
-115            android:name="androidx.room.MultiInstanceInvalidationService"
-115-->[androidx.room:room-runtime:2.6.1] /home/exister/.gradle/caches/9.1.0/transforms/4726209b60b5b9be6400b9afbd1cb59d/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
-116            android:directBootAware="true"
-116-->[androidx.room:room-runtime:2.6.1] /home/exister/.gradle/caches/9.1.0/transforms/4726209b60b5b9be6400b9afbd1cb59d/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
-117            android:exported="false" />
-117-->[androidx.room:room-runtime:2.6.1] /home/exister/.gradle/caches/9.1.0/transforms/4726209b60b5b9be6400b9afbd1cb59d/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
-118
-119        <receiver
-119-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-120            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-120-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-121            android:directBootAware="false"
-121-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-122            android:enabled="true"
-122-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-123            android:exported="true"
-123-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-124            android:permission="android.permission.DUMP" >
-124-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-125            <intent-filter>
-125-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-126                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-126-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-126-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-127            </intent-filter>
-128            <intent-filter>
-128-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-129                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-129-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-129-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-130            </intent-filter>
-131            <intent-filter>
-131-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-132                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-132-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-132-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
-133            </intent-filter>
-134            <intent-filter>
-134-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-135                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-135-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-135-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/6656d2a345824a119f3b18fa257fdee2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
-136            </intent-filter>
-137        </receiver>
-138
-139        <activity
-139-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
-140            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-140-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74
-141            android:clearTaskOnLaunch="true"
-141-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
-142            android:screenOrientation="sensorLandscape"
-142-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
-143            android:stateNotNeeded="true"
-143-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
-144            android:theme="@style/zxing_CaptureTheme"
-144-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
-145            android:windowSoftInputMode="stateAlwaysHidden" />
-145-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/506922aa0bb0ab3cfe229af1c0e1c2f4/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
-146    </application>
-147
-148</manifest>
+54        android:theme="@style/Theme.ChatApp"
+54-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:20:9-45
+55        android:usesCleartextTraffic="true" >
+55-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:21:9-44
+56        <activity
+56-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:24:9-32:20
+57            android:name="com.chatapp.MainActivity"
+57-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:25:13-41
+58            android:exported="true"
+58-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:26:13-36
+59            android:theme="@style/Theme.ChatApp" >
+59-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:27:13-49
+60            <intent-filter>
+60-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:28:13-31:29
+61                <action android:name="android.intent.action.MAIN" />
+61-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:29:17-69
+61-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:29:25-66
+62
+63                <category android:name="android.intent.category.LAUNCHER" />
+63-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:30:17-77
+63-->/home/exister/Desktop/Personal-files/projects/Project_5/app/src/main/AndroidManifest.xml:30:27-74
+64            </intent-filter>
+65        </activity>
+66        <activity
+66-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+67            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+67-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+68            android:excludeFromRecents="true"
+68-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+69            android:exported="false"
+69-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+70            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+70-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+71        <!--
+72            Service handling Google Sign-In user revocation. For apps that do not integrate with
+73            Google Sign-In, this service will never be started.
+74        -->
+75        <service
+75-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+76            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+76-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+77            android:exported="true"
+77-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+78            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+78-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+79            android:visibleToInstantApps="true" />
+79-->[com.google.android.gms:play-services-auth:20.7.0] /home/exister/.gradle/caches/9.1.0/transforms/ca10cd72985d3a230ad742b51e084a20/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+80
+81        <activity
+81-->[com.google.android.gms:play-services-base:18.0.1] /home/exister/.gradle/caches/9.1.0/transforms/743e57cb80092f1a120f5973172b6969/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+82            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+82-->[com.google.android.gms:play-services-base:18.0.1] /home/exister/.gradle/caches/9.1.0/transforms/743e57cb80092f1a120f5973172b6969/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+83            android:exported="false"
+83-->[com.google.android.gms:play-services-base:18.0.1] /home/exister/.gradle/caches/9.1.0/transforms/743e57cb80092f1a120f5973172b6969/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+84            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+84-->[com.google.android.gms:play-services-base:18.0.1] /home/exister/.gradle/caches/9.1.0/transforms/743e57cb80092f1a120f5973172b6969/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+85
+86        <meta-data
+86-->[com.google.android.gms:play-services-basement:18.2.0] /home/exister/.gradle/caches/9.1.0/transforms/880501fcf70dba8c29deeca96cda692f/transformed/play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+87            android:name="com.google.android.gms.version"
+87-->[com.google.android.gms:play-services-basement:18.2.0] /home/exister/.gradle/caches/9.1.0/transforms/880501fcf70dba8c29deeca96cda692f/transformed/play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+88            android:value="@integer/google_play_services_version" />
+88-->[com.google.android.gms:play-services-basement:18.2.0] /home/exister/.gradle/caches/9.1.0/transforms/880501fcf70dba8c29deeca96cda692f/transformed/play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+89
+90        <activity
+90-->[androidx.compose.ui:ui-test-manifest:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/a665ba684a9bc0ce0795fbf40d376bef/transformed/ui-test-manifest-1.5.1/AndroidManifest.xml:23:9-25:39
+91            android:name="androidx.activity.ComponentActivity"
+91-->[androidx.compose.ui:ui-test-manifest:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/a665ba684a9bc0ce0795fbf40d376bef/transformed/ui-test-manifest-1.5.1/AndroidManifest.xml:24:13-63
+92            android:exported="true" />
+92-->[androidx.compose.ui:ui-test-manifest:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/a665ba684a9bc0ce0795fbf40d376bef/transformed/ui-test-manifest-1.5.1/AndroidManifest.xml:25:13-36
+93
+94        <provider
+94-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/b7a0cf120aabe626e80449f683715fa2/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+95            android:name="androidx.startup.InitializationProvider"
+95-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/b7a0cf120aabe626e80449f683715fa2/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+96            android:authorities="com.chatapp.androidx-startup"
+96-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/b7a0cf120aabe626e80449f683715fa2/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+97            android:exported="false" >
+97-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/b7a0cf120aabe626e80449f683715fa2/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+98            <meta-data
+98-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/b7a0cf120aabe626e80449f683715fa2/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+99                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+99-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/b7a0cf120aabe626e80449f683715fa2/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+100                android:value="androidx.startup" />
+100-->[androidx.emoji2:emoji2:1.4.0] /home/exister/.gradle/caches/9.1.0/transforms/b7a0cf120aabe626e80449f683715fa2/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+101            <meta-data
+101-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/exister/.gradle/caches/9.1.0/transforms/456d4523b6f34e6d669f488cb4993fe9/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+102                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+102-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/exister/.gradle/caches/9.1.0/transforms/456d4523b6f34e6d669f488cb4993fe9/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+103                android:value="androidx.startup" />
+103-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/exister/.gradle/caches/9.1.0/transforms/456d4523b6f34e6d669f488cb4993fe9/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+104            <meta-data
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+105                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+106                android:value="androidx.startup" />
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+107        </provider>
+108
+109        <activity
+109-->[androidx.compose.ui:ui-tooling-android:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/6ee17453364272a61caebaf03224df71/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+110            android:name="androidx.compose.ui.tooling.PreviewActivity"
+110-->[androidx.compose.ui:ui-tooling-android:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/6ee17453364272a61caebaf03224df71/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+111            android:exported="true" />
+111-->[androidx.compose.ui:ui-tooling-android:1.5.1] /home/exister/.gradle/caches/9.1.0/transforms/6ee17453364272a61caebaf03224df71/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+112
+113        <service
+113-->[androidx.room:room-runtime:2.6.1] /home/exister/.gradle/caches/9.1.0/transforms/e0fd7b9cca332dcce2b58b997f15e39d/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+114            android:name="androidx.room.MultiInstanceInvalidationService"
+114-->[androidx.room:room-runtime:2.6.1] /home/exister/.gradle/caches/9.1.0/transforms/e0fd7b9cca332dcce2b58b997f15e39d/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+115            android:directBootAware="true"
+115-->[androidx.room:room-runtime:2.6.1] /home/exister/.gradle/caches/9.1.0/transforms/e0fd7b9cca332dcce2b58b997f15e39d/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+116            android:exported="false" />
+116-->[androidx.room:room-runtime:2.6.1] /home/exister/.gradle/caches/9.1.0/transforms/e0fd7b9cca332dcce2b58b997f15e39d/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+117
+118        <receiver
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+119            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+120            android:directBootAware="false"
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+121            android:enabled="true"
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+122            android:exported="true"
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+123            android:permission="android.permission.DUMP" >
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+125                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+128                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+129            </intent-filter>
+130            <intent-filter>
+130-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+131                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+131-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+131-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+132            </intent-filter>
+133            <intent-filter>
+133-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+134                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+134-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+134-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/exister/.gradle/caches/9.1.0/transforms/e575dee34569abb845a2292cb9235fa9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+135            </intent-filter>
+136        </receiver>
+137
+138        <activity
+138-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
+139            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+139-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74
+140            android:clearTaskOnLaunch="true"
+140-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
+141            android:screenOrientation="sensorLandscape"
+141-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
+142            android:stateNotNeeded="true"
+142-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
+143            android:theme="@style/zxing_CaptureTheme"
+143-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
+144            android:windowSoftInputMode="stateAlwaysHidden" />
+144-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/exister/.gradle/caches/9.1.0/transforms/4675d8d19a4252c3b338b3454d362860/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
+145    </application>
+146
+147</manifest>
